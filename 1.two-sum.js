@@ -10,9 +10,14 @@
  * @param {number} target
  * @return {number[]}
  */
+
+// [COMPLETE]
+// Space Complexity: O(1) assuming answer must exist
+// Time Complexity: O(1) assuming answer must exist
 var twoSum = function(nums, target) {
     let hash = new Map()
 
+    // Time: O(n), O(1) assuming answer must exist
     for (let i = 0; i < nums.length; i++) {
         if (hash.has(target - nums[i])) {
             return [hash.get(target - nums[i]), i]
