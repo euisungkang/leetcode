@@ -15,7 +15,7 @@
 var lengthOfLongestSubstring = function(s) {
 
     // Space Complexity: usedChars = O(min(m, n))
-    //        m = size of Set, n = size of string
+    //                   m = size of Set, n = size of string
     let usedChars = []
 
     let answer = 0
