@@ -10,18 +10,22 @@
  * @return {number}
  */
 
-// Time Complexity: 2O(n) = O(n)
+// Time Complexity: O(n)
+// Space Complexity: O(min(m, n))
 var lengthOfLongestSubstring = function(s) {
+
+    // Space Complexity: usedChars = O(min(m, n))
+    //        m = size of Set, n = size of string
     let usedChars = []
-    let longestString = ""
+
+    let answer = 0
 
     // Loop O(n)
     for (let i = 0; i < s.length; i++) {
         if (usedChars.includes(s.charAt(i))) {
 
-            //toString/join O(n)
-            if (longestString.length < usedChars.length)
-                longestString = usedChars.join('')
+            answer = Math.max(answer, usedChars.length)
+
             usedChars = [s.charAt(i)]
 
         } else {
@@ -29,7 +33,7 @@ var lengthOfLongestSubstring = function(s) {
         }
     }
 
-    return Math.max(longestString.length, usedChars.length)
+    return Math.max(answer, usedChars.length)
 };
 // @lc code=end
 
